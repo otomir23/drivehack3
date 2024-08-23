@@ -24,6 +24,9 @@ importers:
       '@sveltejs/vite-plugin-svelte':
         specifier: ^4.0.0-next.6
         version: 4.0.0-next.6(svelte@5.0.0-next.230)(vite@5.4.2)
+      '@types/yandex-maps':
+        specifier: ^2.1.36
+        version: 2.1.36
       autoprefixer:
         specifier: ^10.4.20
         version: 10.4.20(postcss@8.4.41)
@@ -352,6 +355,9 @@ packages:
 
   '@types/pug@2.0.10':
     resolution: {integrity: sha512-Sk/uYFOBAB7mb74XcpizmH0KOR2Pv3D2Hmrh1Dmy5BmK3MpdSa5kqZcg6EKBdklU0bFXX9gCfzvpnyUehrPIuA==}
+
+  '@types/yandex-maps@2.1.36':
+    resolution: {integrity: sha512-SxKOLe627WMFkC3jo7VelT29Uvbvg+LHRtD3cA6W0qWNuf7WQBv+lTaN+os1Vdum+EpglKBJbzjV8PJqwPZUQA==}
 
   acorn-typescript@1.4.13:
     resolution: {integrity: sha512-xsc9Xv0xlVfwp2o7sQ+GCQ1PgbkdcpWdTzrwXxO3xDMTAywVS3oXVOcOHuRjAPkS4P9b+yc/qNF15460v+jp4Q==}
@@ -1279,6 +1285,8 @@ snapshots:
   '@types/estree@1.0.5': {}
 
   '@types/pug@2.0.10': {}
+
+  '@types/yandex-maps@2.1.36': {}
 
   acorn-typescript@1.4.13(acorn@8.12.1):
     dependencies:
