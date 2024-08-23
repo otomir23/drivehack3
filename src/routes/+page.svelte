@@ -60,13 +60,6 @@
 </script>
 
 <main class="h-screen flex flex-col">
-  <header
-    class="px-2 py-1 bg-[#fbed9e] flex items-center h-8 gap-3 text-sm text-[#333333] border-black/40 border-b leading-tight"
-  >
-    <img src={logo} alt="Логотип 1С" />
-    <img src={menu} alt="Иконка меню" />
-    <p>Демонстрационное приложение (1С:Предприятие)</p>
-  </header>
   <Map
     onclick={(e, p, u) => {
       const ref = polys.find(p => p.uuid === u)
@@ -90,7 +83,7 @@
     {@const { pos, uuid } = selection}
     {@const poly = polys.find(p => p.uuid === uuid)!}
     <form
-      class="absolute bg-white px-6 py-8 flex flex-col gap-3 border rounded border-black/30 border-b-black/40 shadow-md"
+      class="absolute bg-white p-4 flex flex-col gap-3 border rounded-lg border-neutral-300 shadow-xl"
       style="left: {pos[0]}px; top: {pos[1]}px;"
       onsubmit={(e) => {
         e.preventDefault();
@@ -98,11 +91,11 @@
         selection = null;
       }}
     >
-      <label class="flex items-center text-[#4b4b4b] gap-1.5">
+      <label class="flex items-center text-neutral-700 gap-1.5">
         Жилая площадь:
         <div class="flex-1 w-2"></div>
         <input
-          class="ring-1 ring-[#B0B0B0] rounded-sm focus:outline-[#FACC1F] outline-offset-4 focus:ring-0 focus:rounded-none shadow-inner leading-tight px-1 py-0.5"
+          class="focus:ring-yellow-50 focus:border-yellow-300 sm:text-sm border-neutral-300 rounded-md outline-none border px-2 py-1 focus:ring-4"
           placeholder="100 000"
           min="0"
           required
@@ -114,11 +107,11 @@
           м<span class="text-xs mb-2">2</span>
         </span>
       </label>
-      <label class="flex items-center text-[#4b4b4b] gap-1.5">
+      <label class="flex items-center text-neutral-700 gap-1.5">
         Коммерческая площадь:
         <div class="flex-1 w-2"></div>
         <input
-          class="ring-1 ring-[#B0B0B0] rounded-sm focus:outline-[#FACC1F] outline-offset-4 focus:ring-0 focus:rounded-none shadow-inner leading-tight px-1 py-0.5"
+          class="focus:ring-yellow-50 focus:border-yellow-300 sm:text-sm border-neutral-200 rounded-md outline-none border px-2 py-1 focus:ring-4"
           placeholder="100 000"
           min="0"
           required
@@ -131,22 +124,17 @@
         </span>
       </label>
       <button
-        class="rounded-sm border border-black/30 border-b-black/40 shadow leading-snug p-1 outline-none group"
-        style="background-repeat: repeat-x; background-position: left bottom, 0 0; background-image: url(https://platform.demo.1c.ru/demo83/ru_RU/e1csys/mngsrv/_pressBottom.png?sysver=8.3.25.1286), url(https://platform.demo.1c.ru/demo83/ru_RU/e1csys/mngsrv/_pressTop.png?sysver=8.3.25.1286);"
+        class="focus:ring-yellow-50 focus:border-yellow-500 sm:text-sm border-yellow-400 rounded-md outline-none border px-3 py-2 focus:ring-4 font-semibold bg-yellow-300"
       >
-        <span
-          class="group-focus:border border-black/30 w-full text-center block rounded-sm"
-        >
-          Расчитать
-        </span>
+        Расчитать
       </button>
     </form>
   {/if}
   <div class="absolute bg-white bottom-0 inset-x-0 w-full p-4 flex flex-col">
-    <input type="range" min={0} max={23} bind:value={time} class="mx-4 appearance-none bg-gray-200 rounded-full accent-yellow-500 shadow-inner" />
+    <input type="range" min={0} max={23} bind:value={time} class="mx-4 appearance-none bg-yellow-50 rounded-full accent-yellow-500 shadow-inner" />
     <div class="flex justify-between">
       {#each [...Array(24)] as _, i}
-        <span class={i === time ? "font-semibold" : "text-gray-600"}>
+        <span class={i === time ? "font-semibold" : "text-neutral-500"}>
           {#if i < 10}0{/if}{i}<span class="max-lg:hidden">:00</span>
         </span>
       {/each}
