@@ -1,7 +1,9 @@
 <script lang="ts" context="module">
   export type RawRoad = {
+    name: string;
     points: [number, number][];
     load: number;
+    maxLoad: number;
   };
   export type RawStation = {
     name: string;
@@ -105,11 +107,11 @@
           {
             geometry: new ymaps.geometry.LineString(r.points),
             properties: {
-              hintContent: `~${r.load} тс/час`,
+              hintContent: `${r.name}: ~${Math.round(r.load)} тс/час`,
             },
           },
           {
-            strokeColor: getRoadColor(r.load, 2400),
+            strokeColor: getRoadColor(r.load, r.maxLoad),
             strokeOpacity: 0.5,
             strokeWidth: 10,
           }

@@ -49,7 +49,12 @@
         load: s.loadPKH,
         point: s.point,
       })) ?? []
-      roads = []
+      roads = r.roadLoad?.mid.map((r: any) => ({
+        name: r.name,
+        load: r.currentFlow,
+        maxLoad: r.maxFlow,
+        points: r.line,
+      })) ?? []
     })
   })
 </script>

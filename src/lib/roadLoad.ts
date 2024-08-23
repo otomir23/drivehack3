@@ -1,14 +1,14 @@
 const colors = [
-    "islands#greenDotIcon",
-    "islands#darkGreenDotIcon",
-    "islands#oliveDotIcon",
-    "islands#yellowDotIcon",
-    "islands#orangeDotIcon",
-    "islands#darkOrangeDotIcon",
-    "islands#redDotIcon",
-    "islands#redDotIcon",
-    "islands#brownDotIcon",
-    "islands#blackDotIcon",
+    "#00ff00",
+    "#66ff33",
+    "#99cc44",
+    "#cccc22",
+    "#ffcc33",
+    "#ff7722",
+    "#ff4422",
+    "#cc2211",
+    "#991100",
+    "#551100",
 ]
 export const getRoadColor = (load: number, maxLoad: number) => {
     const score = (load / maxLoad) * 10
