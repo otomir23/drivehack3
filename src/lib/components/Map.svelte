@@ -72,8 +72,8 @@
   } = $props();
 
   onMount(async () => {
-    const { Map, Polygon, ready } = ymaps;
-    await new Promise((r) => ready(() => r(undefined)));
+    await new Promise((r) => ymaps.ready(() => r(undefined)));
+    const { Map, Polygon } = ymaps;
 
     const LOCATION: ymaps.IMapState = {
       center: [lat, lon],
